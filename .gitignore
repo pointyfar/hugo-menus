@@ -1,0 +1,7 @@
+# Hugo binary
+hugo*
+
+# Generated files at default location
+/public/
+_tmp/
+
