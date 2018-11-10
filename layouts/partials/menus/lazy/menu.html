@@ -1,0 +1,22 @@
+<div class="card">
+    <header class="card-header">
+      <p class="card-header-title">Lazy Menu as per &nbsp; <a href="https://gohugo.io/templates/menu-templates/#section-menu-for-lazy-bloggers"> docs</a></p>
+    </header>
+    <div class="card-content">
+      partials/menus/lazy/menu.html
+      
+      {{ $currentPage := . }}
+      <ol>
+      {{ range .Site.Menus.main }}
+      <li>
+        <a  class="{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" 
+            href="{{ .URL }}" 
+            title="{{ .Title }}">
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
+      </ol>
+    </div>
+</div>
+

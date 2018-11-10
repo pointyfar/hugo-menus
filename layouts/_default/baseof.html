@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html{{ with .Site.LanguageCode }} lang="{{ . }}"{{ end }}>
+{{ partial "head.html" . }}
+<body>
+
+<div class="content">
+  {{- partial "header.html" . -}}
+  <section class="section">
+    <div class="container-fluid">
+      <div class="columns is-multiline">
+        <div class="column is-12">
+          <main>
+          {{- block "main" . -}}
+          {{- end -}}
+          </main>
+        </div>
+        <div class="column">
+          {{ partial "menus/structure/menu.html" . }}
+        </div>
+        <div class="column">
+          {{ partial "menus/lazy/menu.html" . }}
+          {{ partial "menus/config/menu.html" (dict "context" . "from" "lazy menu" "menuname" "main" ) }}
+          {{ partial "menus/config/menu.html" (dict "context" . "from" "config.toml" "menuname" "second" ) }}
+          {{ partial "menus/config/menu.html" (dict "context" . "from" "front matter" "menuname" "third" ) }}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{{- partial "footer.html" . -}}
+
+</body>
+
+</html>

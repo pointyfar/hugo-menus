@@ -1,0 +1,42 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Hugo Menus"
+
+sectionPagesMenu = "main"
+#contentDir = "content3"
+
+
+#### accurate only on contentDir = "content"
+
+[[menu.second]]
+  name = "lorem"
+  title = "Lorem Ipsum"
+  url = "/lorem"
+  identifier = "lorem"
+
+[[menu.second]]
+  name = "About"
+  title = "About Menu"
+  identifier = "about"
+  url = "/about/"
+
+[[menu.second]]
+  name = "Animals"
+  title = "Animals Menu"
+  identifier = "animals"
+  url = "/animals/"
+
+[[menu.second]]
+  name = "Insects"
+  title = "Insects Menu"
+  identifier = "insects"
+  url = "/animals/insects/"
+  parent = "animals"
+
+[[menu.second]]
+  name = "Land"
+  title = "Land Animals Menu"
+  identifier = "land"
+  url = "/animals/land/"
+  parent = "animals"
+

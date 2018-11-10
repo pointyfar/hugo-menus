@@ -1,0 +1,36 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">Menus configured from {{.from}}</p>
+  </header>
+  <div class="card-content">
+    partials/menus/config/menu.html
+    {{ $currentPage := .context }}
+    {{ $m := .menuname }}
+    <ol>
+      {{ range $i, $e := ( index .context.Site.Menus $m) }}
+        {{ template "menutemplate" (dict "currentMenu" . "currentPage" $currentPage "menuname" $m) }}
+      {{ end }}
+    </ol>
+  </div>
+</div>
+
+{{ define "menutemplate" }}
+  {{ $currentMenu := .currentMenu }}
+  {{ $currentPage := .currentPage }}
+  {{ $menu := .menuname }}
+
+  <li>
+    <a  
+      class="{{if or ($currentPage.IsMenuCurrent (print $menu) $currentMenu) ($currentPage.HasMenuCurrent (print $menu) $currentMenu) }} active{{end}}" 
+      href="{{ $currentMenu.URL }}" title="{{ $currentMenu.Title }}">
+      {{ $currentMenu.Name }}
+    </a>
+    {{ if $currentMenu.HasChildren }}
+    <ol>
+      {{ range $i, $e := $currentMenu.Children }}
+        {{ template "menutemplate" (dict "currentMenu" $e "currentPage" $currentPage ) }}
+      {{ end }}
+    </ol>
+    {{ end }}
+  </li>
+{{ end }}

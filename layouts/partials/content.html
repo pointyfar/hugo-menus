@@ -1,0 +1,12 @@
+<h1>{{.Title}}</h1>
+<h2>{{.Permalink}}</h2>
+  
+{{ $notes := .Site.GetPage "/notes/index.md" }}
+<div class="content">
+{{$notes.Content}}
+</div>
+
+<div class="content">
+  <hr>
+{{with .Summary}}{{.}}{{end}}
+</div>
