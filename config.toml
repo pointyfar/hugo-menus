@@ -58,6 +58,6 @@ sectionPagesMenu = "main"
   name = "Chordata"
   title = "Chordata Menu"
   identifier = "chordata"
-  url = "/animals/eumetazoa/bilateria/coelomates/deutorostomia/chordata/"
+  url = "/animals/eumetazoa/bilateria/coelomates/deuterostomia/chordata/"
   parent = "bilateria"
 
