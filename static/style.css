@@ -1,3 +1,17 @@
 .active {
   border: 2px solid red!important;
 }
+
+.content ol:not([type]) {
+   list-style: none;
+   list-style-type: none;
+	 counter-reset: item;
+}
+.content ol li {
+	   counter-increment: item;
+	 }
+.content ol li:before {
+       margin-right: 10px;
+       content: counters(item, ".") " ";
+       display: inline-block;
+     }

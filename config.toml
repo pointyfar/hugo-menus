@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Hugo Menus"
 
 sectionPagesMenu = "main"
-#contentDir = "content3"
+#contentDir = "content2"
 
 
 #### accurate only on contentDir = "content"
@@ -27,16 +27,37 @@ sectionPagesMenu = "main"
   url = "/animals/"
 
 [[menu.second]]
-  name = "Insects"
-  title = "Insects Menu"
-  identifier = "insects"
-  url = "/animals/insects/"
+  name = "Radiata"
+  title = "Radiata Menu"
+  identifier = "radiata"
+  url = "/animals/eumetazoa/radiata/"
   parent = "animals"
 
 [[menu.second]]
-  name = "Land"
-  title = "Land Animals Menu"
-  identifier = "land"
-  url = "/animals/land/"
+  name = "Bilateria"
+  title = "Bilateria Menu"
+  identifier = "bilateria"
+  url = "/animals/eumetazoa/bilateria/"
   parent = "animals"
+
+[[menu.second]]
+  name = "Porifera"
+  title = "Porifera Menu"
+  identifier = "porifera"
+  url = "/animals/parazoa/porifera/"
+  parent = "animals"
+
+[[menu.second]]
+  name = "Nematoda"
+  title = "Nematoda Menu"
+  identifier = "nematoda"
+  url = "/animals/eumetazoa/bilateria/pseudo-coelomates/nematoda/"
+  parent = "bilateria"
+
+[[menu.second]]
+  name = "Chordata"
+  title = "Chordata Menu"
+  identifier = "chordata"
+  url = "/animals/eumetazoa/bilateria/coelomates/deutorostomia/chordata/"
+  parent = "bilateria"
 
