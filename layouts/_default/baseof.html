@@ -21,7 +21,7 @@
           {{ partial "menus/lazy/menu.html" . }}
           {{ partial "menus/config/menu.html" (dict "context" . "from" "config.toml" "menuname" "second" ) }}
           {{ partial "menus/config/menu.html" (dict "context" . "from" "front matter" "menuname" "third" ) }}
-          {{ partial "menus/config/menu.html" (dict "context" . "from" "lazy menu" "menuname" "main" ) }}
+          {{ partial "menus/config/menu.html" (dict "context" . "from" "lazy menu + recursive template" "menuname" "main" ) }}
         </div>
       </div>
     </div>
